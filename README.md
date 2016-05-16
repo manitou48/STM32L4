@@ -9,6 +9,7 @@ isrperf.ino  | ISR overhead in cycles
 mem2mem.ino  | DMA memcpy()
 rng.ino      | hardware RNG
 sysinfo.ino      | hardware registers for clocks, peripherals
+timers.ino   | timer callback
 
 
 -------reference --------------
