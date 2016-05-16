@@ -40,6 +40,9 @@ void setup() {
 
   analogWriteResolution(12);  //? needed
   analogWrite(A0,128);   // init DAC
+  PRREG(DAC->CR);
+  DAC->CR |= 0x14;   // TM7 TRGO
+  PRREG(DAC->CR);
   
   stm32l4_dma_create(&dma, DMA_CHANNEL_DMA1_CH4_TIM7_UP, DMA_OPTION_PRIORITY_MEDIUM);
   stm32l4_dma_enable(&dma, NULL, NULL);
@@ -55,7 +58,8 @@ void setup() {
   }
   stm32l4_timer_enable(&mytimer, scale -1, modulus -1, 0, NULL, NULL, TIMER_EVENT_PERIOD);
   //stm32l4_timer_notify(&mytimer, NULL, NULL, TIMER_EVENT_PERIOD);  // DIER notify DMA
-  TIM7->DIER = TIM_DIER_UDE ;//| TIM_DIER_UIE;
+  TIM7->DIER = TIM_DIER_UDE | TIM_DIER_UIE;
+  TIM7->CR2 = 0x20;  // MMS TRGO update
   char str[64];
   sprintf(str,"%d hz  scale %d modulus %d  clockhz %d",FREQHZ,scale,modulus,stm32l4_timer_clock(&mytimer));
   Serial.println(str);
