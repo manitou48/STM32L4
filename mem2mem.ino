@@ -19,6 +19,7 @@ void setup() {
   Serial.begin(9600);
   while(!Serial);
   stm32l4_dma_create(&dma, DMA_CHANNEL_DMA1_CH7_INDEX, DMA_OPTION_PRIORITY_MEDIUM);
+  stm32l4_dma_enable(&dma, NULL, NULL);
 }
 
 void loop() {
