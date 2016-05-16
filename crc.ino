@@ -52,9 +52,20 @@ void loop() {
 
         CRC->CR |= 1;
         while(CRC->DR != ~0);  // wait for reset
-        CRC->DR = 0;
-        Serial.println(CRC->DR,HEX);
+        CRC->DR = 0;    // should be 2144DF1C
+        Serial.println(~0 ^ CRC->DR,HEX);
 
+        // instead of reset
+        CRC->INIT = 0xffffffff;
+        CRC->DR = 0x41414141;   // AAAA   crc should be 9b0d08f1
+        Serial.println(~0 ^ CRC->DR,HEX);
+
+        // test vector "123456789"  result CBF43926
+        CRC->INIT = 0xffffffff;
+        CRC->DR = 0x34333231;
+        CRC->DR = 0x38373635;
+        *(uint8_t *)(&(CRC->DR)) = 0x39;   // byte access
+        Serial.println(~0 ^ CRC->DR,HEX);
     
         delay(5000); 
 
