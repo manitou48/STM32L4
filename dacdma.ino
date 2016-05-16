@@ -38,8 +38,8 @@ void setup() {
   Serial.begin(9600);
   while(!Serial);
 
-  analogWriteResolution(12);  ? needed
-  analogWrite(A0,0);   // init DAC
+  analogWriteResolution(12);  //? needed
+  analogWrite(A0,128);   // init DAC
   
   stm32l4_dma_create(&dma, DMA_CHANNEL_DMA1_CH4_TIM7_UP, DMA_OPTION_PRIORITY_MEDIUM);
   stm32l4_dma_enable(&dma, NULL, NULL);
