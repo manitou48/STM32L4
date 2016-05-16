@@ -39,9 +39,9 @@ void setup() {
   while(!Serial);
 
   analogWriteResolution(12);  //? needed
-  analogWrite(A0,128);   // init DAC
+  analogWrite(A0,0);   // init DAC
   PRREG(DAC->CR);
-  DAC->CR |= 0x14;   // TM7 TRGO
+  DAC->CR |= 0x1014;   // DMAEN1 TM7 TRGO
   PRREG(DAC->CR);
   
   stm32l4_dma_create(&dma, DMA_CHANNEL_DMA1_CH4_TIM7_UP, DMA_OPTION_PRIORITY_MEDIUM);
