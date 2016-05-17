@@ -1,3 +1,5 @@
+// DEPRECATED, now part of core 
+//   see STM32.getVBAT(), STM32.getVREF() and STM32.getTemperature()
 #include "Arduino.h"
 #include "wiring_private.h"
 

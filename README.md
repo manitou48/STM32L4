@@ -2,7 +2,7 @@
 
 Files | Description
 ---|---
-adc_internal | ADC internal channels temperature, VBAT, VREF
+adc_internal | ADC internal channels temperature, VBAT, VREF (DEPRECATED)
 crc.ino	|   CRC 32 example
 driftrtc.ino | check frequency of RTC crystal or LSI
 isrperf.ino  | ISR overhead in cycles
