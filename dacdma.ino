@@ -7,6 +7,11 @@
 
 #define PRREG(x) Serial.print(#x" 0x"); Serial.println(x,HEX)
 
+volatile uint32_t ticks;
+void timer_isr(void *context, uint32_t events) {
+  ticks++;
+}
+
 static volatile uint16_t sinetable[] = {
    2047,    2147,    2248,    2348,    2447,    2545,    2642,    2737,
    2831,    2923,    3012,    3100,    3185,    3267,    3346,    3422,
@@ -43,11 +48,11 @@ void setup() {
   PRREG(DAC->CR);
   DAC->CR |= 0x1014;   // DMAEN1 TM7 TRGO
   PRREG(DAC->CR);
-  
+
   stm32l4_dma_create(&dma, DMA_CHANNEL_DMA1_CH4_TIM7_UP, DMA_OPTION_PRIORITY_MEDIUM);
   stm32l4_dma_enable(&dma, NULL, NULL);
   stm32l4_dma_start(&dma, (uint32_t)&(DAC->DHR12R1), (uint32_t)sinetable, sizeof(sinetable)/2, DMA_OPTIONS);
-  
+
   stm32l4_timer_create(&mytimer, TIMER_INSTANCE_TIM7, STM32L4_TONE_IRQ_PRIORITY, 0);
   uint32_t modulus = (stm32l4_timer_clock(&mytimer) / FREQHZ) ;
   uint32_t scale   = 1;
@@ -56,17 +61,23 @@ void setup() {
     modulus /= 2;
     scale++;
   }
-  stm32l4_timer_enable(&mytimer, scale -1, modulus -1, 0, NULL, NULL, TIMER_EVENT_PERIOD);
+  stm32l4_timer_enable(&mytimer, scale-1, modulus-1, 0, timer_isr, NULL, TIMER_EVENT_PERIOD);
   //stm32l4_timer_notify(&mytimer, NULL, NULL, TIMER_EVENT_PERIOD);  // DIER notify DMA
+
   TIM7->DIER = TIM_DIER_UDE | TIM_DIER_UIE;
   TIM7->CR2 = 0x20;  // MMS TRGO update
+
   char str[64];
   sprintf(str,"%d hz  scale %d modulus %d  clockhz %d",FREQHZ,scale,modulus,stm32l4_timer_clock(&mytimer));
   Serial.println(str);
+
   stm32l4_timer_start(&mytimer, false);
 }
 
 void loop() {
-  Serial.println(analogRead(A5));   // jumper DAC A0 to A5
+  int val;
+  val = analogRead(A4);
+  Serial.print(ticks); Serial.print(" ");
+  Serial.println(val);   // jumper DAC A0 to A4
   delay(1000);
 }

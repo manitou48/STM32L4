@@ -4,6 +4,7 @@ Files | Description
 ---|---
 adc_internal | ADC internal channels temperature, VBAT, VREF (DEPRECATED)
 crc.ino	|   CRC 32 example
+dacdma  | timer clocks circular DMA to DAC
 driftrtc.ino | check frequency of RTC crystal or LSI
 isrperf.ino  | ISR overhead in cycles
 mem2mem.ino  | DMA memcpy()
