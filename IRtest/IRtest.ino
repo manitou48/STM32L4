@@ -203,6 +203,7 @@ void setup() {
   pinMode(LEDPin, OUTPUT);
   pinMode(TestPin, OUTPUT);
   pinMode(RecvPin, INPUT);
+  analogWriteRange(PWMPin,256);
   analogWrite(PWMPin,0);
   stm32l4_timer_create(&mytimer, TIMER_INSTANCE_TIM7, STM32L4_TONE_IRQ_PRIORITY, 0);
 }
