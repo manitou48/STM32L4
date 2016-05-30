@@ -21,6 +21,8 @@ As this is alpha testing, performance and function will change with time.
 
 * LEDs are pulled HIGH, so write LOW to turn on
 
+* delay() uses sleep (WFE)
+
 * pin 44, user button, is pulled HIGH
 
 * uses SerialUSB (Serial is redefined), you need Serial.begin(baudrate) and while(!Serial) is helpful
@@ -31,9 +33,9 @@ As this is alpha testing, performance and function will change with time.
 
 * CPU clock 80mhz, AHBCLK 80mhz  APB1CLK 40mhz  APB2CLK 40mhz (max SPI 20mhz)
 
-* PWM 488Hz
+* PWM 488Hz, ADC 60 ADC_CLK ticks
 
-* to burn new bootloader, hold RESET button and then push/release USER button
+* to burn new bootloader, hold USER button and then push/release RESET button
 
 
 -------reference --------------
@@ -45,3 +47,7 @@ https://github.com/kriswiner/Dragonfly/
 https://github.com/GrumpyOldPizza/arduino-STM32L4
 
 http://www.stm32duino.com/viewtopic.php?t=896&start=10 early discussion
+
+MBED STM32L4 critters
+ https://developer.mbed.org/platforms/ST-Discovery-L476VG/
+ https://developer.mbed.org/platforms/ST-Nucleo-L476RG/
