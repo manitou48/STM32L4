@@ -48,6 +48,6 @@ https://github.com/GrumpyOldPizza/arduino-STM32L4
 
 http://www.stm32duino.com/viewtopic.php?t=896&start=10 early discussion
 
-MBED STM32L4 critters
- https://developer.mbed.org/platforms/ST-Discovery-L476VG/
- https://developer.mbed.org/platforms/ST-Nucleo-L476RG/
+MBED STM32L4 critters:
+https://developer.mbed.org/platforms/ST-Discovery-L476VG/ i've tested it a bit
+https://developer.mbed.org/platforms/ST-Nucleo-L476RG/
