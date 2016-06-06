@@ -4,6 +4,7 @@ Some simple proof-of-concept sketches (alpha tests).
 
 Files | Description
 ---|---
+adcdma | timed ADC samples with DMA
 adc_internal | ADC internal channels temperature, VBAT, VREF (DEPRECATED)
 crc.ino	|   CRC 32 example
 dacdma  | timer clocks circular DMA to DAC
