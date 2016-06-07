@@ -52,3 +52,14 @@ http://www.stm32duino.com/viewtopic.php?t=896&start=10 early discussion
 MBED STM32L4 critters:
 * https://developer.mbed.org/platforms/ST-Discovery-L476VG/ i've tested it a bit
 * https://developer.mbed.org/platforms/ST-Nucleo-L476RG/
+
+------------------------------------
+
+Some anecdotal performance comparisons:
+
+* [computational speed](https://github.com/manitou48/DUEZoo/blob/master/perf.txt)
+* [power consumption] (https://github.com/manitou48/DUEZoo/blob/master/power.txt)
+* [ISR latency] (https://github.com/manitou48/DUEZoo/blob/master/isrperf.txt)
+* [SPI+DMA](https://github.com/manitou48/DUEZoo/blob/master/SPIperf.txt)
+* [DMA memcpy](https://github.com/manitou48/DUEZoo/blob/master/mem2mem.txt)
+
