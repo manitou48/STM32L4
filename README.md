@@ -34,7 +34,7 @@ As this is alpha testing, performance and function will change with time.
 
 * CPU clock 80mhz, AHBCLK 80mhz  APB1CLK 40mhz  APB2CLK 40mhz (max SPI 20mhz)
 
-* PWM 488Hz, ADC 60 ADC_CLK ticks
+* PWM 488Hz, ADC 60 ADC_CLK ticks (1.5us), CRC 213 mbs
 
 * to burn new bootloader, hold USER button and then push/release RESET button
 
