@@ -36,6 +36,8 @@ As this is alpha testing, performance and function will change with time.
 
 * PWM 488Hz, ADC 60 ADC_CLK ticks (1.5us), CRC 213 mbs
 
+* lower power tests: @80mhz, powered at 3.3v (no USB) power LED on, run (15ma), sleep/WFE (6ma), stop (0.9ma), standby (0.43ma), shutdown (0.34ma)
+
 * to burn new bootloader, hold USER button and then push/release RESET button
 
 
