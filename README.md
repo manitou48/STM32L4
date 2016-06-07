@@ -62,4 +62,6 @@ Some anecdotal performance comparisons:
 * [ISR latency] (https://github.com/manitou48/DUEZoo/blob/master/isrperf.txt)
 * [SPI+DMA](https://github.com/manitou48/DUEZoo/blob/master/SPIperf.txt)
 * [DMA memcpy](https://github.com/manitou48/DUEZoo/blob/master/mem2mem.txt)
+* [random numbers](https://github.com/manitou48/DUEZoo/blob/master/RNGperf.txt)
+* [crystal drift](https://github.com/manitou48/crystals/blob/master/crystals.txt)
 
