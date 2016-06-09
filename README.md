@@ -67,5 +67,6 @@ Some anecdotal performance comparisons:
 * [SPI+DMA](https://github.com/manitou48/DUEZoo/blob/master/SPIperf.txt)
 * [DMA memcpy](https://github.com/manitou48/DUEZoo/blob/master/mem2mem.txt)
 * [random numbers](https://github.com/manitou48/DUEZoo/blob/master/RNGperf.txt)
+* [blink size](https://github.com/manitou48/DUEZoo/blob/master/blinksize.txt)
 * [crystal drift](https://github.com/manitou48/crystals/blob/master/crystals.txt)
 
