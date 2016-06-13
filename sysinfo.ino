@@ -9,6 +9,10 @@ void setup() {
 }
 
 void loop() {
+    char str[64];
+    uint32_t *p = (uint32_t *)0x1fff7590;  // 96-bit uid
+
+    sprintf(str,"uid %0x %0x %0x",p[0],p[1],p[2]); Serial.println(str);
     PRREG(SysTick->VAL);
     PRREG(PWR->CR1);
     PRREG(RCC->CR);
@@ -32,6 +36,14 @@ void loop() {
     PRREG(RTC->PRER);
     PRREG(IWDG->PR);
     PRREG(IWDG->RLR);
+	float f;
+	f= STM32.getVBAT();
+	Serial.print("VBAT "); Serial.println(f);
+	f= STM32.getVREF();
+	Serial.print("VREF "); Serial.println(f);
+	f= STM32.getTemperature();
+	Serial.print("temp "); Serial.println(f);
+    Serial.println();
 
   delay(5000);
 }
