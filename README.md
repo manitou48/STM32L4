@@ -68,3 +68,92 @@ Some anecdotal performance comparisons:
 * [blink size](https://github.com/manitou48/DUEZoo/blob/master/blinksize.txt)
 * [crystal drift](https://github.com/manitou48/crystals/blob/master/crystals.txt)
 
+
+```
+    dragonfly tests   @80mhz   0.0.11
+      alpha testing -- things will change
+
+                   teensy 3.2  mbed K64F  dragonfly
+        CRC16         120MHz     120MHz     80MHz
+        bit-bang        9584       7101     16227
+        table-driven    2226       1623      2026
+        hardware         275        275       615
+
+   memcpy and DMA memory-to-memory
+          474.90 mbs  69 us   dma32 copy
+          70.93 mbs  462 us   loop copy
+          1092.27 mbs  30 us   memcpy
+          1927.53 mbs  17 us   memset
+          91.28 mbs  359 us   set loop
+
+    IMU float-intensive filters  (no sensor data)  microseconds
+                   T3.2     dragonfly   mbed K64F
+                  @120mhz     @80mhz     @120mhz
+       NXP/kalman   3396       535          459
+       madgwick      203        18            8
+       mahony        125        13            6
+
+
+   sdqspi   58mbs 512-byte file read
+
+
+
+USB  latency_test
+      latency @ 1 bytes: 0.26 ms average, 1.30 maximum
+      latency @ 2 bytes: 0.29 ms average, 1.95 maximum
+      latency @ 12 bytes: 0.28 ms average, 1.75 maximum
+      latency @ 30 bytes: 0.30 ms average, 1.90 maximum
+      latency @ 62 bytes: 0.39 ms average, 1.99 maximum
+      latency @ 71 bytes: 0.41 ms average, 1.33 maximum
+      latency @ 128 bytes: 0.51 ms average, 1.73 maximum
+      latency @ 500 bytes: 1.18 ms average, 2.53 maximum
+      latency @ 1000 bytes: 2.14 ms average, 2.93 maximum
+      latency @ 2000 bytes: 4.13 ms average, 4.49 maximum
+      latency @ 4000 bytes: 7.97 ms average, 8.05 maximum
+      latency @ 8000 bytes: 15.76 ms average, 15.96 maximum
+
+USBreadbytes
+   Average bytes per second = 512424
+
+   mbed TLS
+     md5 335 us 3056 KBs
+     sha256 869 us 1178 KBs
+     aes setkey 10
+     encrypt 157
+     decrypt 113
+     100! us 1979
+     93326215443944152681
+     entropy us 189
+     rng us 2328
+
+speedTest 
+F_CPU = 80000000 Hz
+1/F_CPU = 0.0125 us
+The next tests are runtime compensated for overhead
+  nop                       : 0.013 us
+  Arduino digitalRead       : 0.276 us
+  Arduino digitalWrite      : 0.236 us
+  pinMode                   : 4.571 us
+  multiply volatile byte    : 0.074 us
+  divide volatile byte      : 0.086 us
+  multiply volatile integer : 0.061 us
+  divide volatile integer   : 0.071 us
+  multiply volatile long    : 0.059 us
+  multiply single float     : 0.074 us
+  divide single float       : 0.238 us
+  multiply double float     : 0.751 us
+  divide double float       : 12.446 us
+  random()                  : 0.821 us
+  bitSet() with volatile    : 0.048 us
+  analogRead()              : 33.196 us    38.598 0.0.4  38.448 0.0.6
+  analogWrite() PWM         : 5.606 us    5.548 0.0.6
+  delay(1)                  : 999.996 us
+  delay(100)                : 99999.996 us
+  delayMicroseconds(1)      : 1.715 us
+  delayMicroseconds(5)      : 5.711 us
+  delayMicroseconds(100)    : 100.746 us
+
+
+```
+# vim: tabstop=4 expandtab shiftwidth=4 softtabstop=4
+
