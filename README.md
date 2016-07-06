@@ -92,6 +92,8 @@ Some anecdotal performance comparisons:
        NXP/kalman   3396       535          459
        madgwick      203        18            8
        mahony        125        13            6
+   
+       fft (float)  8144       689          488
 
 
    sdqspi   58mbs 512-byte file read
