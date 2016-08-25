@@ -73,11 +73,12 @@ Some anecdotal performance comparisons:
     dragonfly tests   @80mhz   0.0.11
       alpha testing -- things will change
 
-                   teensy 3.2  mbed K64F  dragonfly
-        CRC16         120MHz     120MHz     80MHz
-        bit-bang        9584       7101     16227
-        table-driven    2226       1623      2026
-        hardware         275        275       615
+                   teensy 3.2  mbed K64F  dragonfly   T3.6 K66
+        CRC16 16KB    120MHz     120MHz     80MHz      @180mhz
+        bit-bang        9584       7101     16227        5649
+        table-driven    2226       1623      2026         612
+        hardware         275        275       615         207
+		  (dragonfly hardware with -O3 unrolled loop: 257 us)
 
    memcpy and DMA memory-to-memory
           474.90 mbs  69 us   dma32 copy
@@ -87,13 +88,13 @@ Some anecdotal performance comparisons:
           91.28 mbs  359 us   set loop
 
     IMU float-intensive filters  (no sensor data)  microseconds
-                   T3.2     dragonfly   mbed K64F
-                  @120mhz     @80mhz     @120mhz
-       NXP/kalman   3396       535          459
-       madgwick      203        18            8
-       mahony        125        13            6
+                   T3.2     dragonfly   mbed K64F   T3.6 K66
+                  @120mhz     @80mhz     @120mhz     @180mhz
+       NXP/kalman   3396       535          459        285
+       madgwick      203        18            8          7
+       mahony        125        13            6          3
    
-       fft (float)  8144       689          488
+       fft (float)  8144       689          488        339
 
 
    sdqspi   58mbs 512-byte file read
