@@ -32,7 +32,7 @@ As this is alpha testing, performance and function will change with time.
 
 * CPU clock 80mhz, AHBCLK 80mhz  APB1CLK 40mhz  APB2CLK 40mhz (max SPI 20mhz)
 
-* PWM 488Hz, ADC 60 ADC_CLK ticks (1.5us), CRC 213 mbs
+* PWM 488Hz, ADC 60 ADC_CLK ticks (1.5us), CRC 213 mbs (510 mbs -O3), RNG 3.7 mbs
 
 * lower power tests: @80mhz, powered at 3.3v (no USB) power LED on, run (15ma), sleep/WFE (6ma), stop (0.9ma), standby (0.43ma), shutdown (0.34ma)
 
