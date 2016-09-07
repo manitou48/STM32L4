@@ -96,6 +96,11 @@ Some anecdotal performance comparisons:
    
        fft (float)  8144       689          488        339
 
+   sparkfun mpu9250 sensor/filter rate
+      dragonfly opt  49458 Hz
+	  dragonfly       6328
+	  T3.2@120mhz     2714
+	  T3.5@120mhz     6640     (K64)
 
    sdqspi   58mbs 512-byte file read
 
