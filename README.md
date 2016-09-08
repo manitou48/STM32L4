@@ -98,12 +98,12 @@ Some anecdotal performance comparisons:
 
    sparkfun mpu9250 sensor/filter rate
 	  dragonfly         6328 HZ
-      dragonfly int    45409 
-      dragonfly opt    49458    int + I2C/DMA
+      dragonfly isr    45409 
+      dragonfly opt    49458    isr + I2C/DMA
 	  T3.2@120mhz       2714
-	  T3.2@120mhz int   4397
+	  T3.2@120mhz isr   4397
 	  T3.5@120mhz       6640     (K64)
-	  T3.5@120mhz int  77972 
+	  T3.5@120mhz isr  77972 
 
    sdqspi   58mbs 512-byte file read
 
