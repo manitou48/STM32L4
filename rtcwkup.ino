@@ -10,9 +10,11 @@
 volatile uint32_t ticks;
 
 extern "C" void RTC_WKUP_IRQHandler(void) {
-	ticks++;
-	RTC->ISR &= (uint32_t)~RTC_ISR_WUTF;   // clear wakeup
-  EXTI->PR1 |= EXTI_PR1_PIF20;
+  if (RTC->ISR & RTC_ISR_WUTF) {
+	  ticks++;
+	  RTC->ISR &= (uint32_t)~RTC_ISR_WUTF;   // clear wakeup
+    EXTI->PR1 |= EXTI_PR1_PIF20;
+  }
 }
 
 
@@ -55,7 +57,7 @@ void rtc_init() {
   while((RTC->ISR & RTC_ISR_WUTWF)  == 0);   // wait
   RTC->CR &= ~7 ;   // clear WUCKSEL
   RTC->WUTR = 15;   // +1 is 16   1024 ticks/sec
-  RTC->CR |= RTC_CR_WUTE | RTC_CR_WUTIE | 2 ;   // enable wakeup 32khz/2
+  RTC->CR |= RTC_CR_WUTE | RTC_CR_WUTIE | 3 ;   // enable wakeup 32khz/2
 
 	//  enable write protection
 	RTC->WPR = 0xff;
