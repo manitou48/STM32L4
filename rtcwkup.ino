@@ -1,4 +1,4 @@
-// dragonfly test version pre RTC software   poll  version
+// dragonfly test version pre RTC software   ISR  version
 
 // RTC wakeup interrupt  countdown is +1, prescale 32khz  16 8 4 2
 //  assume RTC is running and set
