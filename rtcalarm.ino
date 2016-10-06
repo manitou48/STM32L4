@@ -20,7 +20,7 @@ extern "C" void RTC_Alarm_IRQHandler(void) {
 		ticks++;
 		RTC->ISR &= (uint32_t)~RTC_ISR_ALRAF;   // clear wakeup
 		EXTI->PR1 |= EXTI_PR1_PIF18;
-		// update target time   ALRAWF already set
+		// update target time 
 		/* Disable the write protection for RTC registers */
 		RTC->WPR = 0xCA;
 		RTC->WPR = 0x53;
