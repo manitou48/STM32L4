@@ -13,7 +13,8 @@ IRtest  | IR transmit-receive test IRremote
 isrperf.ino  | ISR overhead in cycles
 mem2mem.ino  | DMA memcpy()
 rng.ino      | hardware RNG
-rtcalarm.ino  | RTC ALARM A once every minute on 7th second
+rtcalarm.ino  | RTC ALARM A every n seconds, ISR update
+rtcsetget.ino | set RTC from epoch seconds, compiler TIME DATE
 rtcwkup.ino  | RTC periodic WKUP ISR
 sysinfo.ino      | hardware registers for clocks, peripherals
 timers.ino   | timer callback
