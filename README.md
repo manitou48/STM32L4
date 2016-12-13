@@ -62,7 +62,7 @@ MBED STM32L4 critters:
 
 Some anecdotal performance comparisons:
 
-* [computational speed](https://github.com/manitou48/DUEZoo/blob/master/perf.txt)
+* [computational speed](https://github.com/manitou48/DUEZoo/blob/master/perf.txt)  Coremark, linpack, AES, MD5, ...
 * [power consumption] (https://github.com/manitou48/DUEZoo/blob/master/power.txt)
 * [ISR latency] (https://github.com/manitou48/DUEZoo/blob/master/isrperf.txt)
 * [SPI+DMA](https://github.com/manitou48/DUEZoo/blob/master/SPIperf.txt)
@@ -169,3 +169,6 @@ The next tests are runtime compensated for overhead
 
 
 ```
+coremark
+![coremark](STM32L4/coremark.png)
+![coremark power](STM32L4/coremarka.png)
