@@ -169,6 +169,6 @@ The next tests are runtime compensated for overhead
 
 
 ```
-coremark
+
 ![coremark](https://github.com/manitou48/STM32L4/blob/master/coremark.png)
 ![coremark power](https://github.com/manitou48/STM32L4/blob/master/coremarka.png)
