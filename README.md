@@ -45,6 +45,7 @@ As this is alpha testing, performance and function will change with time.
 -------reference --------------
 
 https://www.tindie.com/products/onehorse/dragonfly-stm32l4-development-board/
+https://www.tindie.com/products/TleraCorp/dragonfly-stm32l476-development-board/?pt=full_prod_search
 
 https://github.com/kriswiner/Dragonfly/
 
