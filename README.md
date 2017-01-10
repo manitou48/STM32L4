@@ -1,4 +1,4 @@
-##  80mhz STM32L476RE dragonfly sketches
+##  80mhz STM32L476RE dragonfly sketches, and some butterfly tests
 
 Some simple proof-of-concept sketches (alpha tests).
 
@@ -45,7 +45,8 @@ As this is alpha testing, performance and function will change with time.
 -------reference --------------
 
 https://www.tindie.com/products/onehorse/dragonfly-stm32l4-development-board/
-https://www.tindie.com/products/TleraCorp/dragonfly-stm32l476-development-board/?pt=full_prod_search
+https://www.tindie.com/products/TleraCorp/dragonfly-stm32l476-development-board/?pt=full_prod_search dragonfly
+https://www.tindie.com/products/TleraCorp/butterfly-stm32l433-development-board/ butterfly
 
 https://github.com/kriswiner/Dragonfly/
 
