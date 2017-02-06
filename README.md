@@ -27,7 +27,7 @@ As this is alpha testing, performance and function will change with time.
 
 * delay() uses sleep (WFE)
 
-* pin 44, user button, is pulled HIGH
+* pin 44 (39 butterfly), user button, is pulled LOW, push for HIGH
 
 * uses SerialUSB (Serial is redefined), you need Serial.begin(baudrate) and while(!Serial) is helpful
 
@@ -58,7 +58,7 @@ and http://www.stm32duino.com/viewtopic.php?t=1092
 
 MBED STM32L4 critters:
 * https://developer.mbed.org/platforms/ST-Discovery-L476VG/ i've tested it a bit
-* https://developer.mbed.org/platforms/ST-Nucleo-L476RG/
+* https://developer.mbed.org/platforms/ST-Nucleo-L476RG/    some testing
 
 ------------------------------------
 
