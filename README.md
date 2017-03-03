@@ -6,6 +6,7 @@ Files | Description
 ---|---
 adcdma | timed ADC samples with DMA
 adc_internal | ADC internal channels temperature, VBAT, VREF (DEPRECATED)
+adc_test | ADC timing and averaging
 crc.ino	|   CRC 32 example
 dacdma  | timer clocks circular DMA to DAC
 driftrtc.ino | check frequency of RTC crystal or LSI
