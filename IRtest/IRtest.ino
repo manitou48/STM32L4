@@ -5,12 +5,12 @@
     use PWM to generate mark/space at 38Khz
      IR LED xmit   pin to 100ohm to +IR  - to grnd (short/flat)
     use timer 50us to count mark/space on input
-    is it possible to run both xmit and recv?
+    it's possible to run both xmit and recv, loopback
     stm32l4 timers 16/17 are IR timer, but we'll use old IR style
     TestPin for feedback tests, jumper to RecvPin (don't hook PWMPin)
 */
 #include "Arduino.h"
-#include "wiring_private.h"
+#include "stm32l4_wiring_private.h"
 #include "IRremote.h"
 
 #define RecvPin 4
@@ -203,7 +203,7 @@ void setup() {
   pinMode(LEDPin, OUTPUT);
   pinMode(TestPin, OUTPUT);
   pinMode(RecvPin, INPUT);
-  analogWriteRange(PWMPin,256);
+  analogWriteRange(PWMPin,256);  // analogWrite range 0-255
   analogWrite(PWMPin,0);
   stm32l4_timer_create(&mytimer, TIMER_INSTANCE_TIM7, STM32L4_TONE_IRQ_PRIORITY, 0);
 }
