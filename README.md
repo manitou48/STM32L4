@@ -19,6 +19,8 @@ rtcsetget.ino | set RTC from epoch seconds, compiler TIME DATE
 rtcwkup.ino  | RTC periodic WKUP ISR
 sysinfo.ino      | hardware registers for clocks, peripherals
 timers.ino   | timer callback
+timxdma.ino  | timer capture with DMA
+timxcap2.ino | timer capture of period and pulse
 
 ### alpha testing Notes & Experiences
 
