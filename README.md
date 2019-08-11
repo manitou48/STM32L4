@@ -10,6 +10,7 @@ adc_test | ADC timing and averaging
 crc.ino	|   CRC 32 example
 dacdma  | timer clocks circular DMA to DAC
 driftrtc.ino | check frequency of RTC crystal or LSI
+freqcount.ino | count external pulses to pin 31 
 IRtest  | IR transmit-receive test IRremote
 isrperf.ino  | ISR overhead in cycles
 mem2mem.ino  | DMA memcpy()
