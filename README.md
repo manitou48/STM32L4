@@ -11,6 +11,7 @@ crc.ino	|   CRC 32 example
 dacdma  | timer clocks circular DMA to DAC
 driftrtc.ino | check frequency of RTC crystal or LSI
 freqcount.ino | count external pulses to pin 31 
+gpscapture.ino | GPS PPS capture to calculate drift, TIM5 @80mhz
 IRtest  | IR transmit-receive test IRremote
 isrperf.ino  | ISR overhead in cycles
 mem2mem.ino  | DMA memcpy()
